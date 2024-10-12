@@ -14,3 +14,6 @@ requirements.txt
 
 # Local settings
 .env
+
+# Pytest-associated files
+.coverage*
