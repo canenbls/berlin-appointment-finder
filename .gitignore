@@ -11,3 +11,6 @@ wheels/
 .python-version
 poetry.lock
 requirements.txt
+
+# Local settings
+.env
