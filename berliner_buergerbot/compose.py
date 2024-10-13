@@ -3,7 +3,7 @@ from .check import Appointment
 
 def compose_message(available_appointments: list[Appointment] | None) -> str:
     if available_appointments:
-        appointments_str = "\n".join(
+        appointments_str = "\n\n".join(
             [
                 f"{appointment.date}:\n{appointment.href}"
                 for appointment in available_appointments
