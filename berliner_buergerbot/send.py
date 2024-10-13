@@ -1,3 +1,5 @@
+import asyncio
+
 from twilio.rest import Client  # type: ignore[import]
 
 from .config import Settings
@@ -5,7 +7,7 @@ from .config import Settings
 settings = Settings()
 
 
-def send_message(message: str):
+async def send_message(message: str) -> None:
     if not (
         settings.twilio_account_sid
         and settings.twilio_auth_token
@@ -39,5 +41,9 @@ def send_message(message: str):
     )
 
 
+async def main():
+    await send_message("Hello from Berliner Buergerbot!")
+
+
 if __name__ == "__main__":
-    send_message("Hello from Berliner Buergerbot!")
+    asyncio.run(main())
