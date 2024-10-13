@@ -1,3 +1,5 @@
+.PHONY: test
+
 # Type-check code
 check:
 	uv run mypy --check-untyped-defs .
