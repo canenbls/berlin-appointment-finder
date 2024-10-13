@@ -5,7 +5,7 @@ def compose_message(available_appointments: list[Appointment] | None) -> str:
     if available_appointments:
         appointments_str = "\n\n".join(
             [
-                f"{appointment.date}:\n{appointment.href}"
+                f"{appointment.date}:\nhttps://service.berlin.de{appointment.href}"
                 for appointment in available_appointments
             ]
         )
