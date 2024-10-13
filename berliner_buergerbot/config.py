@@ -22,8 +22,3 @@ class Settings(BaseSettings):
     )
     twilio_to_no: str | None = Field(default=None, alias="TWILIO_TO_NO")
     twilio_whatsapp: bool = Field(default=True, alias="TWILIO_WHATSAPP")
-
-
-if __name__ == "__main__":
-    settings = Settings()
-    print(settings.model_dump_json(indent=4))
