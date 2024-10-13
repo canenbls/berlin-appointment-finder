@@ -12,11 +12,16 @@ wheels/
 poetry.lock
 requirements.txt
 
-# Pytest-associated files
-.coverage*
-
 # Local settings
 .env
+
+# Local cache
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Coverage reports
+.coverage*
 
 # IDEs
 .vscode/
