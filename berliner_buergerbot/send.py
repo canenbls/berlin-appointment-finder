@@ -1,5 +1,3 @@
-import asyncio
-
 from twilio.rest import Client  # type: ignore[import]
 
 from .config import Settings
@@ -39,11 +37,3 @@ async def send_message(message: str) -> None:
         to=to_no,  # type: ignore[arg-type]
         body=message,
     )
-
-
-async def main():
-    await send_message("Hello from Berliner Buergerbot!")
-
-
-if __name__ == "__main__":
-    asyncio.run(main())

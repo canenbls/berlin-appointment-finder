@@ -4,12 +4,6 @@ import re
 from playwright.async_api import Locator, async_playwright
 from pydantic import BaseModel
 
-from .config import Settings
-
-URL_BASE = "https://service.berlin.de/terminvereinbarung/termin"
-
-settings = Settings()
-
 
 class Appointment(BaseModel):
     date: str
@@ -36,43 +30,20 @@ async def extract_appointment(td: Locator) -> Appointment | None:
     return None
 
 
-async def check_available_appointments() -> list[Appointment] | None:
-    if not settings.appointment_id:
-        raise ValueError(
-            "APPOINTMENT_ID not set. Please see README.md for instructions for setting it."
-        )
-
+async def check_available_appointments(
+    url: str, playwright_headless: bool
+) -> list[Appointment] | None:
     async with async_playwright() as playwright:
         chromium = playwright.chromium
-        browser = await chromium.launch(headless=settings.playwright_headless)
+        browser = await chromium.launch(headless=playwright_headless)
         page = await browser.new_page()
-        await page.goto(f"{URL_BASE}/all/{settings.appointment_id}/")
+        await page.goto(url)
 
-        available_appointments: list[Appointment] = []
-
-        if page.url == f"{URL_BASE}/day/":
-            td_elements = await page.locator("td.buchbar").all()
-            tasks = [extract_appointment(td) for td in td_elements]
-            results = await asyncio.gather(*tasks)
-            available_appointments.extend(
-                result for result in results if result is not None
-            )
+        td_elements = await page.locator("td.buchbar").all()
+        tasks = [extract_appointment(td) for td in td_elements]
+        results = await asyncio.gather(*tasks)
+        available_appointments = [result for result in results if result is not None]
 
         await browser.close()
 
-    return available_appointments if available_appointments else None
-
-
-async def main():
-    available_appointments = await check_available_appointments()
-    print(
-        "\n".join(
-            appointment.model_dump_json() for appointment in available_appointments
-        )
-        if available_appointments
-        else "No appointments available."
-    )
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
+    return available_appointments or None
