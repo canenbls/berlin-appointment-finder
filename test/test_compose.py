@@ -25,5 +25,5 @@ def test_compose_message_multiple_appointments():
         Appointment(date="13.12.2024", href="https://example.com/2"),
     ]
     result = compose_message(appointments)
-    expected = "*Available Appointments*\n\n12.12.2024:\nhttps://example.com/1\n13.12.2024:\nhttps://example.com/2"
+    expected = "*Available Appointments*\n\n12.12.2024:\nhttps://example.com/1\n\n13.12.2024:\nhttps://example.com/2"
     assert result == expected
