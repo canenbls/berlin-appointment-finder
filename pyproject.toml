@@ -15,12 +15,15 @@ dependencies = [
 dev-dependencies = [
     "mypy>=1.11.2",
     "pytest>=8.3.3",
+    "pytest-asyncio>=0.24.0",
     "pytest-cov>=5.0.0",
+    "pytest-mock>=3.14.0",
     "ruff>=0.6.9",
 ]
 
 [tool.pytest.ini_options]
 addopts = "--cov --cov-report=lcov:.coverage.info --cov-report term-missing"
+asyncio_default_fixture_loop_scope = "function"
 markers = [
 	"local",
 ]
