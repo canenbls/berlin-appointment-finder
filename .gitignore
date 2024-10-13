@@ -12,8 +12,14 @@ wheels/
 poetry.lock
 requirements.txt
 
+# Pytest-associated files
+.coverage*
+
 # Local settings
 .env
 
-# Pytest-associated files
-.coverage*
+# IDEs
+.vscode/
+
+# Misc
+.DS_Store
