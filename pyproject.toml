@@ -2,7 +2,7 @@
 name = "berlin-appointment-finder"
 version = "0.1.0"
 description = "An app that monitors the Berlin city administration website for available appointments and sends notifications using Twilio."
-authors = "Sören Canenbley <post@canenbley.net>"
+authors = [{ name = "Sören Canenbley", email = "post@canenbley.net" }]
 readme = "README.md"
 license = "AGPL-3.0-or-later"
 requires-python = ">=3.12.7,<3.13"
