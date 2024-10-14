@@ -15,7 +15,7 @@ async def main():
             "APPOINTMENT_ID not set. Please see README.md for instructions for setting it."
         )
 
-    previous_message = "No appointments available."
+    previous_message: str | None = None
 
     while True:
         print("Checking for available appointments...")
@@ -31,6 +31,7 @@ async def main():
         else:
             print("No news. Not sending message.")
 
+        previous_message = message
         print(f"Sleeping for {settings.checking_interval} seconds.")
         sleep(settings.checking_interval)
 
