@@ -1,5 +1,9 @@
 .PHONY: test
 
+# Run the app
+run:
+	uv run -m app
+
 # Type-check code
 check:
 	uv run mypy --check-untyped-defs .
