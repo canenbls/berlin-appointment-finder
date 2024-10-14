@@ -3,7 +3,7 @@ from unittest.mock import MagicMock
 import pytest
 from pytest_mock import MockerFixture
 
-from berliner_buergerbot.send import send_message
+from app.send import send_message
 
 
 @pytest.fixture

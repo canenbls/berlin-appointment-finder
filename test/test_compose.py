@@ -1,5 +1,5 @@
-from berliner_buergerbot.check import Appointment
-from berliner_buergerbot.compose import compose_message
+from app.check import Appointment
+from app.compose import compose_message
 
 
 def test_compose_message_no_appointments():

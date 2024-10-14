@@ -4,7 +4,7 @@ from unittest.mock import AsyncMock, MagicMock
 import pytest
 from playwright.async_api import Locator
 
-from berliner_buergerbot.check import (
+from app.check import (
     Appointment,
     check_available_appointments,
     extract_appointment,
