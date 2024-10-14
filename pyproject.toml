@@ -1,8 +1,10 @@
 [project]
-name = ""
+name = "berliner-buergerbot"
 version = "0.1.0"
-description = ""
+description = "An app that monitors the Berlin city administration website and notifies users about available appointment slots."
+authors = "Sören Canenbley <post@canenbley.net>"
 readme = "README.md"
+license = "AGPL-3.0-or-later"
 requires-python = ">=3.12.7,<3.13"
 dependencies = [
     "playwright>=1.47.0",
