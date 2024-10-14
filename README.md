@@ -29,14 +29,14 @@ An app that monitors the Berlin city administration website for available appoin
     - If the workflow is disabled, click "Enable workflow" to activate it
     - If it's enabled and you want to stop it, click "..." → "Disable workflow"
 3. When enabled, the workflow automatically starts at 00:00 (12:00 AM), 6:00 (6:00 AM), 12:00 (12:00 PM), and 18:00 (6:00 PM), and checks for available appointments every 90 seconds for up to 6 hours
-4. To immediately start the workflow, click "Run workflow" → "Run workflow" selecting the `master` branch
+4. To immediately start the workflow, click "Run workflow" → "Run workflow", selecting the `master` branch
 
 ## Local Development
 
 ### Setup
 
-1. **Install uv**: Follow the instructions [here](https://docs.astral.sh/uv/getting-started/installation/).
-2. **Set up the environment**: Run `uv sync` to install the virtual Python environment and dependencies.
+1. **Install uv**: Follow the instructions [here](https://docs.astral.sh/uv/getting-started/installation/)
+2. **Set up the environment**: Run `uv sync` to install the virtual Python environment and dependencies
 3. **Create a `.env` file** with the following environment variables:
     - **Required:**
         - `APPOINTMENT_ID` (`int`)
