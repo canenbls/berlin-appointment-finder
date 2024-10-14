@@ -73,3 +73,26 @@ async def test_check_available_appointments_single_appointment():
             href="https://service.berlin.de/terminvereinbarung/termin/time/1733958000/",
         )
     ]
+
+
+@pytest.mark.asyncio
+async def test_check_available_appointments_multiple_appointments():
+    taken_html_file_path = Path(__file__).parent / "fixtures" / "Day_multiple.html"
+    result = await check_available_appointments(
+        f"file://{str(taken_html_file_path)}", True
+    )
+    print(result)
+    assert result == [
+        Appointment(
+            date="03.12.2024",
+            href="https://service.berlin.de/terminvereinbarung/termin/time/1733180400/",
+        ),
+        Appointment(
+            date="05.12.2024",
+            href="https://service.berlin.de/terminvereinbarung/termin/time/1733353200/",
+        ),
+        Appointment(
+            date="09.12.2024",
+            href="https://service.berlin.de/terminvereinbarung/termin/time/1733698800/",
+        ),
+    ]
