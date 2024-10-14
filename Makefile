@@ -25,4 +25,3 @@ test:
 # Clean project directory
 clean:
 	rm -rf .venv/ .mypy_cache/ .ruff_cache/ .pytest_cache/ .coverage* __pycache__/
-
