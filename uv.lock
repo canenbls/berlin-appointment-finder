@@ -84,7 +84,7 @@ wheels = [
 ]
 
 [[package]]
-name = "berliner-buergerbot"
+name = "berlin-appointment-checker"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
