@@ -1,4 +1,4 @@
-name: Berlin Appointment Checker
+name: Berlin Appointment Finder
 
 on:
   schedule:
@@ -6,11 +6,11 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: berlin_appointment_checker
+  group: berlin_appointment_finder
   cancel-in-progress: true  
 
 jobs:
-  run-checker:
+  run-finder:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,7 +36,7 @@ jobs:
       run: |
         uv run playwright install --with-deps chromium
 
-    - name: Run Berlin Appointment Checker
+    - name: Run Berlin Appointment Finder
       env:
         APPOINTMENT_ID: ${{ vars.APPOINTMENT_ID }}
         TWILIO_ACCOUNT_SID: ${{ vars.TWILIO_ACCOUNT_SID }}
