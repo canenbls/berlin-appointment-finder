@@ -9,7 +9,7 @@ from app.send import send_message
 @pytest.fixture
 def mock_twilio(mocker: MockerFixture):
     mock_client = MagicMock()
-    mocker.patch("berliner_buergerbot.send.Client", return_value=mock_client)
+    mocker.patch("app.send.Client", return_value=mock_client)
     return mock_client
 
 
@@ -23,6 +23,6 @@ async def test_send_message(mock_twilio: MagicMock):
 
 @pytest.mark.asyncio
 async def test_send_message_missing_setting(mocker: MockerFixture):
-    mocker.patch("berliner_buergerbot.send.settings.twilio_account_sid", None)
+    mocker.patch("app.send.settings.twilio_account_sid", None)
     with pytest.raises(ValueError, match="Required Twilio settings not found."):
         await send_message("Hello!")
