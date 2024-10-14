@@ -84,7 +84,7 @@ wheels = [
 ]
 
 [[package]]
-name = "berlin-appointment-checker"
+name = "berlin-appointment-finder"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
