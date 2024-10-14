@@ -14,7 +14,11 @@ def mock_twilio(mocker: MockerFixture):
 
 
 @pytest.mark.asyncio
-async def test_send_message(mock_twilio: MagicMock):
+async def test_send_message(mock_twilio: MagicMock, mocker: MockerFixture):
+    mocker.patch("app.send.settings.twilio_account_sid", "fake_sid")
+    mocker.patch("app.send.settings.twilio_auth_token", "fake_auth_token")
+    mocker.patch("app.send.settings.twilio_from_no_whatsapp", "fake_whatsapp_no")
+    mocker.patch("app.send.settings.twilio_to_no", "fake_to_no")
     mock_twilio.messages.create = MagicMock(return_value=None)
     message = "Hello!"
     await send_message(message)
