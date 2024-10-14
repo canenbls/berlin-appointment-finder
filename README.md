@@ -54,12 +54,12 @@ An app that monitors the Berlin city administration website for available appoin
 
 The following `make` commands are available for local development:
 
-- **Run the app**: `make run`
-- **Type-check the code**: `make check`
-- **Lint and check formatting**: `make lint`
+- **Run app**: `make run`
+- **Type-check code**: `make check`
+- **Lint and check formatting (no fixes)**: `make lint`
 - **Fix linting and formatting issues**: `make format`
 - **Run tests**: `make test`
-- **Clean the project directory**: `make clean`
+- **Clean project directory**: `make clean`
 
 ## Contributing
 
