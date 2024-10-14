@@ -1,6 +1,6 @@
 .PHONY: test
 
-# Run the app
+# Run app
 run:
 	uv run -m app
 
