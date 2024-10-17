@@ -21,4 +21,4 @@ class Settings(BaseSettings):
         default=None, alias="TWILIO_FROM_NO_WHATSAPP"
     )
     twilio_to_no: str | None = Field(default=None, alias="TWILIO_TO_NO")
-    twilio_whatsapp: bool = Field(default=True, alias="TWILIO_WHATSAPP")
+    twilio_use_whatsapp: bool = Field(default=True, alias="TWILIO_USE_WHATSAPP")

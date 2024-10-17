@@ -11,7 +11,7 @@ async def send_message(message: str) -> None:
         and settings.twilio_auth_token
         and (
             settings.twilio_from_no_whatsapp
-            if settings.twilio_whatsapp
+            if settings.twilio_use_whatsapp
             else settings.twilio_from_no_sms
         )
         and settings.twilio_to_no
@@ -22,12 +22,12 @@ async def send_message(message: str) -> None:
 
     from_no = (
         f"whatsapp:{settings.twilio_from_no_whatsapp}"
-        if settings.twilio_whatsapp
+        if settings.twilio_use_whatsapp
         else settings.twilio_from_no_sms
     )
     to_no = (
         f"whatsapp:{settings.twilio_to_no}"
-        if settings.twilio_whatsapp
+        if settings.twilio_use_whatsapp
         else settings.twilio_to_no
     )
 

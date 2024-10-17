@@ -15,4 +15,4 @@ def test_default_settings():
         assert settings.twilio_from_no_sms is None
         assert settings.twilio_from_no_whatsapp is None
         assert settings.twilio_to_no is None
-        assert settings.twilio_whatsapp is True
+        assert settings.twilio_use_whatsapp is True
