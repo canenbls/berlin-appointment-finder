@@ -22,7 +22,7 @@ An app that monitors the Berlin city administration website for available appoin
         - `TWILIO_FROM_NO_WHATSAPP`: Your Twilio WhatsApp phone number
         - `TWILIO_TO_NO`: Your private phone number
 
-> _To send notifications via SMS, set the optional variable `TWILIO_FROM_NO_SMS` to your Twilio phone number (from the [Twilio Console](https://console.twilio.com/)) and `TWILIO_WHATSAPP` to `False`._
+> _To send notifications via SMS, set the optional variable `TWILIO_FROM_NO_SMS` to your Twilio phone number (from the [Twilio Console](https://console.twilio.com/)) and `TWILIO_USE_WHATSAPP` to `False`._
 
 ### Running the Application
 
@@ -49,8 +49,8 @@ An app that monitors the Berlin city administration website for available appoin
     - **Optional:**
         - `CHECKING_INTERVAL` (`int`, default: `90`)
         - `PLAYWRIGHT_HEADLESS` (`bool`, default: `True`)
-        - `TWILIO_FROM_NO_SMS` (`str`)
-        - `TWILIO_WHATSAPP` (`bool`, default: `True`)
+        - `TWILIO_FROM_NO_SMS` (`str`, used if `TWILIO_USE_WHATSAPP` is `False`)
+        - `TWILIO_USE_WHATSAPP` (`bool`, default: `True`)
 
 ### Utilities
 
