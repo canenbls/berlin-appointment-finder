@@ -1,6 +1,6 @@
 # Berlin Appointment Finder
 
-An app that monitors the Berlin city administration website for available appointments and sends notifications using Twilio.
+An app that monitors the Berlin city administration website for available appointments and sends notifications via Twilio, running online with GitHub Actions.
 
 ## Usage
 

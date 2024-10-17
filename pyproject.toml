@@ -1,7 +1,7 @@
 [project]
 name = "berlin-appointment-finder"
 version = "0.1.0"
-description = "An app that monitors the Berlin city administration website for available appointments and sends notifications using Twilio."
+description = "An app that monitors the Berlin city administration website for available appointments and sends notifications via Twilio, running online with GitHub Actions."
 authors = [{ name = "Sören Canenbley", email = "post@canenbley.net" }]
 readme = "README.md"
 license = "AGPL-3.0-or-later"
